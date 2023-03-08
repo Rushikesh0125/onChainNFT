@@ -22,7 +22,7 @@ contract onChainGameChar is ERC721URIStorage {
         return tokenIdToLevels[_tokenId].toString();
     }
 
-    function generateCharacter(uint256 _tokenId) public view returns(string memory){
+    function generateCharacter(uint256 _tokenId) public returns(string memory){
 
         bytes memory svg = abi.encodePacked(
             '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 350 350">',
@@ -40,7 +40,7 @@ contract onChainGameChar is ERC721URIStorage {
         );
     }
 
-    function getTokenURI(uint256 _tokenId) public view returns (string memory){
+    function getTokenURI(uint256 _tokenId) public returns (string memory){
         bytes memory dataURI = abi.encodePacked(
             '{',
                 '"name": "Chain Battles #', _tokenId.toString(), '",',
